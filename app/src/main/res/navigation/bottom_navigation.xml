@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation_bar"
+    app:startDestination="@id/page_1">
+
+    <fragment
+        android:id="@+id/page_1"
+        android:name="com.example.justpump.ui.home.HomeFragment"
+        android:label="@string/page_1" />
+    <fragment
+        android:id="@+id/page_2"
+        android:name="com.example.justpump.ui.training.TrainingFragment"
+        android:label="@string/page_2" />
+    <fragment
+        android:id="@+id/page_3"
+        android:name="com.example.justpump.ui.nutrition.NutritionFragment"
+        android:label="@string/page_3" />
+</navigation>
