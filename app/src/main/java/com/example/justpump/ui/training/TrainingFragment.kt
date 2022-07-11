@@ -7,15 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.justpump.R
 import com.example.justpump.adapter.TrainingItemAdapter
 import com.example.justpump.data.TrainingDatasource
 import com.example.justpump.databinding.FragmentTrainingBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -39,13 +36,25 @@ class TrainingFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_training, container, false)
 
+            // Inflate the layout for this fragment
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val trainings = TrainingDatasource().loadTraining()
 
+        // recyclerView von Layout wird mit code verknüpft
         val recyclerView = binding.rvTraining
 
-        recyclerView.adapter = TrainingItemAdapter(this, trainings)
+        // recyclerView erhält einen passenden LayoutManager
+        recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
 
-            // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_training, container, false)
+        // ItemAdapter wird als Adapter festgelegt
+        recyclerView.adapter = TrainingItemAdapter(requireContext(), trainings)
+
+        // verbesserte Performance bei fixer Größe
+        recyclerView.setHasFixedSize(true)
     }
 }

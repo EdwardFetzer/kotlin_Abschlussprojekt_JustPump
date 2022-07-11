@@ -7,13 +7,21 @@
     <fragment
         android:id="@+id/page_1"
         android:name="com.example.justpump.ui.home.HomeFragment"
-        android:label="@string/page_1" />
+        android:label="@string/home" />
     <fragment
         android:id="@+id/page_2"
         android:name="com.example.justpump.ui.training.TrainingFragment"
-        android:label="@string/page_2" />
+        android:label="@string/training">
+        <action
+            android:id="@+id/action_page_2_to_exerciseFragment2"
+            app:destination="@id/exerciseFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/page_3"
         android:name="com.example.justpump.ui.nutrition.NutritionFragment"
-        android:label="@string/page_3" />
+        android:label="@string/nutrition" />
+    <fragment
+        android:id="@+id/exerciseFragment2"
+        android:name="com.example.justpump.ui.exercises.ExerciseFragment"
+        android:label="@string/exercise" />
 </navigation>

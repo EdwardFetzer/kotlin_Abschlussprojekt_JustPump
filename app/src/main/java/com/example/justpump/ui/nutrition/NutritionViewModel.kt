@@ -1,4 +1,7 @@
 package com.example.justpump.ui.nutrition
 
-class NutritionViewModel {
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+
+class NutritionViewModel(application: Application) : AndroidViewModel(application) {
 }

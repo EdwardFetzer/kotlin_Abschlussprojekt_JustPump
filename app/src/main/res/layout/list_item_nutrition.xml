@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/training_cardView"
+        android:id="@+id/nutrition_cardView"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="172dp"
         android:layout_height="203dp"
@@ -22,7 +22,7 @@
 
             <!-- Media -->
             <ImageView
-                android:id="@+id/training_image"
+                android:id="@+id/nutrition_image"
                 android:layout_width="match_parent"
                 android:layout_height="108dp"
                 android:contentDescription="test"
@@ -37,7 +37,7 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/training_title_text"
+                    android:id="@+id/nutrition_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Training"
@@ -55,7 +55,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/training_start_button"
+                    android:id="@+id/nutrition_start_button"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

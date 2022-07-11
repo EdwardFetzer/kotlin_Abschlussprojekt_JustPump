@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
     /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: ActivityMainBinding
 
-   // lateinit var toolbar: ActionBar
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,11 +31,5 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        // Binding zur XML-Datei
-
-       // binding.bottomNavigation.selectedItemId = R.id.page_2
-
-
     }
 }

@@ -5,12 +5,16 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.justpump.ui.exercises.ExerciseViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.training.TrainingFragment">
+        tools:context=".ui.exercises.ExerciseFragment">
 
         <ImageView
             android:id="@+id/background"
@@ -25,7 +29,7 @@
             app:srcCompat="@drawable/training_background" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTraining"
+            android:id="@+id/rvExercise"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="#A6000000"
@@ -36,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:listitem="@layout/list_item_training" />
+            tools:listitem="@layout/list_item_exercise" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_margin="16dp">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/training_cardView"
+        android:id="@+id/cv_exercise"
         style="?attr/materialCardViewFilledStyle"
-        android:layout_width="172dp"
-        android:layout_height="203dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="#1C1B1F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,9 +24,9 @@
 
             <!-- Media -->
             <ImageView
-                android:id="@+id/training_image"
+                android:id="@+id/iv_exercise"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="181dp"
                 android:contentDescription="test"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/krafttraining" />
@@ -35,12 +37,11 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/training_title_text"
+                    android:id="@+id/tv_exercise_title"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Training"
+                    android:layout_height="20dp"
+                    android:text="Übung"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
@@ -49,13 +50,36 @@
 
             <!-- Buttons -->
             <LinearLayout
-                android:layout_width="107dp"
-                android:layout_height="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_exercise_descriptionTitle"
+                    android:layout_width="369dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Beschreibung"
+                    android:textColor="#FDFDFD" />
+
+                <TextView
+                    android:id="@+id/tv_exercise_descriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_margin="12dp"
+                    android:text="hier kommt ein beispiel text \nhier kommt ein beispiel texthier kommt ein beispiel texthier kommt ein beispiel texthier kommt ein beispiel texthier kommt ein beispiel text"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="41dp"
                 android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/training_start_button"
+                    android:id="@+id/exercise_start_button"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
