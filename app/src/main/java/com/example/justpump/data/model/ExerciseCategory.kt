@@ -1,5 +1,6 @@
 package com.example.justpump.data.model
 
-enum class ExerciseCategory {
-    BRUST, RUECKEN, SCHULTER, ARME, BAUCH, BEINE, PO
-}
+data class ExerciseCategory(
+    val name: String,
+    val imageResource: Int
+)

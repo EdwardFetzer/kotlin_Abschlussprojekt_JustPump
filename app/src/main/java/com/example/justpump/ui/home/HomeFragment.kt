@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import com.example.justpump.R
 import com.example.justpump.databinding.FragmentHomeBinding
-
-
-private lateinit var binding: FragmentHomeBinding
+import com.example.justpump.ViewModel
 
 
 class HomeFragment : Fragment() {
 
+    private val viewmodel: ViewModel by activityViewModels()
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

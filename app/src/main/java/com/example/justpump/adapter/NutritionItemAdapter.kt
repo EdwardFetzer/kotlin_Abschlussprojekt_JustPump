@@ -1,5 +1,6 @@
 package com.example.justpump.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +13,15 @@ import com.example.justpump.data.model.Nutrition
 
 class NutritionItemAdapter(
     private val context: Context,
-    private val dataset: List<Nutrition>
 ) : RecyclerView.Adapter<NutritionItemAdapter.ItemViewHolder>() {
+
+    private lateinit var dataset: List<Nutrition>
+
+    @SuppressLint("Test2")
+    fun submitNutritionList(list: List<Nutrition>) {
+        dataset = list
+        notifyDataSetChanged()
+    }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nutritionTitle: TextView = itemView.findViewById(R.id.nutrition_title_text)

@@ -5,6 +5,7 @@
 
     <data>
 
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +22,19 @@
 
         </FrameLayout>
 
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="548dp"
+            android:layout_height="734dp"
+            android:background="#FFFFFF"
+            android:foregroundTint="#56000000"
+            android:tint="#A6000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/training_background" />
+
 
         <TextView
             android:id="@+id/tv_movies"
@@ -28,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Home"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

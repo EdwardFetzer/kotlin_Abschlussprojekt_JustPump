@@ -34,8 +34,19 @@
         android:id="@+id/exerciseFragment"
         android:name="com.example.justpump.ui.exercises.ExerciseFragment"
         android:label="@string/exercise" >
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseDetailFragment"
+            app:destination="@id/exerciseDetailFragment" />
         <argument
-            android:name="rightExercises"
-            app:argType="com.example.justpump.data.model.ExerciseCategory" />
+            android:name="exerciseCategoryARG"
+            app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/exerciseDetailFragment"
+        android:name="com.example.justpump.ui.exercises.ExerciseDetailFragment"
+        android:label="ExerciseDetailFragment" />
+    <fragment
+        android:id="@+id/caloriesFragment"
+        android:name="com.example.justpump.ui.calories.CaloriesFragment"
+        android:label="CaloriesFragment" />
 </navigation>

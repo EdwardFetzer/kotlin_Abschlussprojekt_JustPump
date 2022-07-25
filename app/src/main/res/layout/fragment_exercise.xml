@@ -5,9 +5,6 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="com.example.justpump.ui.exercises.ExerciseViewModel" />
 
     </data>
 
@@ -21,7 +18,8 @@
             android:layout_width="548dp"
             android:layout_height="734dp"
             android:background="#FFFFFF"
-            android:foregroundTint="#56FFFFFF"
+            android:foregroundTint="#56000000"
+            android:tint="#A6000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +30,9 @@
             android:id="@+id/rvExercise"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="#A6000000"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:foregroundTint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

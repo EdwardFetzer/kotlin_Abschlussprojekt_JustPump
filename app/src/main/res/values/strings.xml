@@ -1,9 +1,38 @@
 <resources>
+    <string name="brustUebung1">Liegestützen</string>
+    <string name="brustUebung2">Positive Liegestützen</string>
+    <string name="brustUebung3">Negative Liegestützen</string>
+    <string name="schulterUebung1">Seitenheben Kurzhantel</string>
+    <string name="schulterUebung2">Frontheben Kurzhantel</string>
+    <string name="schulterUebung3">Vorgebeugtes Seitenheben</string>
+    <string name="rueckenUebung1">Klimmzüge</string>
+    <string name="rueckenUebung2">Rudern am Kabelzug</string>
+    <string name="rueckenUebung3">Klassisches Kreuzheben</string>
+    <string name="armeUebung1">Kurzhantel Curls stehend</string>
+    <string name="armeUebung2">Hammer Curls stehend</string>
+    <string name="armeUebung3">Curls an der Bizepsmaschine</string>
+    <string name="armeUebung4">Trizepsdrücken am Kabel: Pushdown</string>
+    <string name="armeUebung5">Trizepsdrücken am Kabel: über Kopf</string>
+    <string name="armeUebung6">Trizepsdrücken an der Trizepsmaschine</string>
+    <string name="bauchUebung1">Sit-Ups</string>
+    <string name="bauchUebung2">Cross Crunches</string>
+    <string name="bauchUebung3">Hüftheben af der Bank</string>
+    <string name="beineUebung1">Beinpresse</string>
+    <string name="beineUebung2">Beinstrecker an der Maschine</string>
+    <string name="beineUebung3">Kniebeugen</string>
+
+    <string name="brustTitel">Brust</string>
+    <string name="schulterTitel">Schulter</string>
+    <string name="rueckenTitel">Rücken</string>
+    <string name="bauchTitel">Bauch</string>
+    <string name="armeTitel">Arme</string>
+    <string name="beineTitel">Beine</string>
+
     <string name="app_name">JustPump</string>
     <string name="home">Start</string>
     <string name="training">Training</string>
     <string name="nutrition">Ernährung</string>
-    <string name="page_4">Unbekannt</string>
+    <string name="calories">Kalorien</string>
     <string name="exercise">Übungen</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,11 +1,13 @@
 package com.example.justpump.data.model
 
 /**
- * Diese Klasse repräsentiert einen Trainingsplan
+ * Diese Klasse repräsentiert eine Übung
  **/
 data class Exercise (
-    val categories: List<ExerciseCategory>,
-    val imageId: Int,
-    val title: String,
-    val description: String
+    val Id: Long,
+    val stringResource: Int,
+    val imageResource: Int,
+    val description: String,
+    val category: String
+    //val categories: List<ExerciseCategory>,
 )

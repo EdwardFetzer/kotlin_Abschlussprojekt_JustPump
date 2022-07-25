@@ -1,7 +1,7 @@
 package com.example.justpump.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,20 +14,24 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.justpump.R
 import com.example.justpump.data.model.Training
-import com.example.justpump.ui.training.TrainingFragment
+import com.example.justpump.data.model.TrainingCategory
 import com.example.justpump.ui.training.TrainingFragmentDirections
 
 class TrainingItemAdapter(
-    private val context: Context,
-    private val dataset: List<Training>
+    private val dataset: List<TrainingCategory>
 ) : RecyclerView.Adapter<TrainingItemAdapter.ItemViewHolder>() {
 
 
+    //@SuppressLint("Test1")
+    //fun submitTrainingList(list: List<TrainingCategory>) {
+    //    dataset = list
+    //    notifyDataSetChanged()
+    //}
+
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val cardView: CardView = itemView.findViewById(R.id.training_cardView)
+        val cvTraining: CardView = itemView.findViewById(R.id.cv_training)
         val imageView: ImageView = itemView.findViewById(R.id.training_image)
-        val trainingTitle: TextView = itemView.findViewById(R.id.training_title_text)
-        val startButton: Button = itemView.findViewById(R.id.training_start_button)
+        val trainingTitle: TextView = itemView.findViewById(R.id.tv_training_title)
     }
 
     // hier werden neue ViewHolder erstellt
@@ -45,13 +49,13 @@ class TrainingItemAdapter(
     // die vom ViewHolder bereitgestellten Parameter werden verändert
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-        holder.trainingTitle.text = item.title
+        holder.trainingTitle.text = item.name
 
-        holder.startButton.setOnClickListener {
+        holder.cvTraining.setOnClickListener {
             // wird an ExerciseFragment übergeben
-            val bundle = bundleOf("exerciseFilter" to item.category)
+            //val bundle = bundleOf("exerciseFilter" to item.category)
             holder.itemView.findNavController()
-                .navigate(R.id.exerciseFragment, bundle)
+                .navigate(TrainingFragmentDirections.actionTrainingFragmentToExerciseFragment(item.name))
         }
     }
 

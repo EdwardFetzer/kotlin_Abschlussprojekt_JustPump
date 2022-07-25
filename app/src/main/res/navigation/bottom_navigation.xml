@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation_bar"
     app:startDestination="@id/page_1">
 
@@ -11,17 +12,9 @@
     <fragment
         android:id="@+id/page_2"
         android:name="com.example.justpump.ui.training.TrainingFragment"
-        android:label="@string/training">
-        <action
-            android:id="@+id/action_page_2_to_exerciseFragment2"
-            app:destination="@id/exerciseFragment2" />
-    </fragment>
+        android:label="@string/training"/>
     <fragment
         android:id="@+id/page_3"
         android:name="com.example.justpump.ui.nutrition.NutritionFragment"
         android:label="@string/nutrition" />
-    <fragment
-        android:id="@+id/exerciseFragment2"
-        android:name="com.example.justpump.ui.exercises.ExerciseFragment"
-        android:label="@string/exercise" />
 </navigation>

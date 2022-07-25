@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="16dp">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/training_cardView"
+        android:id="@+id/cv_training"
         style="?attr/materialCardViewFilledStyle"
-        android:layout_width="172dp"
-        android:layout_height="203dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="#1C1B1F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,20 +28,20 @@
             <ImageView
                 android:id="@+id/training_image"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="143dp"
                 android:contentDescription="test"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/krafttraining" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="12dp">
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/training_title_text"
+                    android:id="@+id/tv_training_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Training"
@@ -48,23 +52,6 @@
             </LinearLayout>
 
             <!-- Buttons -->
-            <LinearLayout
-                android:layout_width="107dp"
-                android:layout_height="35dp"
-                android:layout_margin="8dp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/training_start_button"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="8dp"
-                    android:text="Start"
-                    android:textColor="#8BC34A"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

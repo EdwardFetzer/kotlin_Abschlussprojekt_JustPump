@@ -1,4 +1,6 @@
 package com.example.justpump.data.model
 
-class TrainingCategory {
-}
+data class TrainingCategory(
+    val name: String,
+    val imageResource: Int
+)
