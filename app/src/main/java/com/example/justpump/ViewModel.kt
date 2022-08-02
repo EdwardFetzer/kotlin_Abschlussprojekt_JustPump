@@ -4,12 +4,11 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.justpump.data.*
-import com.example.justpump.data.model.Exercise
-import com.example.justpump.data.model.Nutrition
-import com.example.justpump.data.model.Training
-import com.example.justpump.data.model.TrainingCategory
+import com.example.justpump.data.model.*
 import com.example.justpump.data.remote.NutritionApi
+import kotlinx.coroutines.launch
 
 class ViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -47,6 +46,17 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val nutritionDatasource = NutritionDatasource()
     private val mealDatasource = MealDatasource()
 
+    private val database = getDatabase(application)
+    val databaseRepository = DailyDatabaseRepository(database)
+
+    val dailyList = databaseRepository.dailyList
+
+    fun insertDatabase(datenbankClass: DatenbankClass) {
+        viewModelScope.launch {
+            databaseRepository.insert(datenbankClass)
+        }
+    }
+
     private val _trainings = MutableLiveData<List<Training>>(TrainingDatasource().loadTraining())
     val trainings: LiveData<List<Training>>
         get() = _trainings
@@ -58,6 +68,12 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val _nutrition = MutableLiveData<List<Nutrition>>()
     val nutrition: LiveData<List<Nutrition>>
         get() = _nutrition
+
+    private val _eatday = MutableLiveData<List<NutritionMacro>>()
+    val eatday: LiveData<List<NutritionMacro>>
+        get() = _eatday
+
+    
 
 
     init {

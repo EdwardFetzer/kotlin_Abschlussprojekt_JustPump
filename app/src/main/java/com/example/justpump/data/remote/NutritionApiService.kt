@@ -31,8 +31,10 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface NutritionApiService {
+
     @GET("nutrition")
     suspend fun getMacros(@Query("query") meal: String) : Nutritions
+
 }
 
 object NutritionApi {

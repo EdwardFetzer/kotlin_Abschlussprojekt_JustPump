@@ -24,9 +24,4 @@ class NutritionRepository(private val nutritionsApi: NutritionApi) {
             Log.e("macroTest", "Error loading data from API: $e")
         }
     }
-    suspend fun getProtein(proteinMacro: String) {
-        try {
-            _protein.value = nutritionsApi.retrofitService.get
-        }
-    }
 }
