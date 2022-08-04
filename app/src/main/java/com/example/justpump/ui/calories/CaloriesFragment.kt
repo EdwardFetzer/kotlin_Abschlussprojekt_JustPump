@@ -11,8 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.example.justpump.R
 import com.example.justpump.ViewModel
-import com.example.justpump.data.model.DatenbankClass
-import com.example.justpump.data.model.NutritionMacro
 import com.example.justpump.databinding.FragmentCaloriesBinding
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -42,28 +40,15 @@ class CaloriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.button.setOnClickListener {
-            val meal = binding.textInputEditText.text.toString()
-            lifecycleScope.launch {
-                viewModel.repository.getMacros(meal)
-            }
+            val foodName = binding.textInputEditText.text.toString()
+            viewModel.getMacrosAndInsert(foodName)
         }
-        viewModel.repository.macros.observe(
-            viewLifecycleOwner, Observer {
-                val proteinDataClass = DatenbankClass(nutritionName = "Eiweiß", nutritionValue = it.items[0].protein_g, date = LocalDate.now().toString())
-                val sugarDataClass = DatenbankClass(nutritionName = "Zucker", nutritionValue = it.items[0].sugar_g, date = LocalDate.now().toString())
-                val caloriesDataClass =DatenbankClass(nutritionName = "Kalorien", nutritionValue = it.items[0].calories, date = LocalDate.now().toString())
-                lifecycleScope.launch {
-                    viewModel.databaseRepository.insert(proteinDataClass)
-                    viewModel.databaseRepository.insert(sugarDataClass)
-                    viewModel.databaseRepository.insert(caloriesDataClass)
-                }
-            }
-        )
-        viewModel.dailyList.observe(
-            viewLifecycleOwner, Observer {
-                it.filter { it.date == LocalDate.now().toString() }
-            }
-        )
+
+//        viewModel.dailyList.observe(
+//            viewLifecycleOwner, Observer {
+//                it.filter { it.date == LocalDate.now().toString() }
+//            }
+//        )
     }
 
 }

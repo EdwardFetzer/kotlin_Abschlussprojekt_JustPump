@@ -1,6 +1,6 @@
 package com.example.justpump.data.remote
 
-import com.example.justpump.data.model.Nutritions
+import com.example.justpump.data.model.AllMacros
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -33,7 +33,7 @@ private val retrofit = Retrofit.Builder()
 interface NutritionApiService {
 
     @GET("nutrition")
-    suspend fun getMacros(@Query("query") meal: String) : Nutritions
+    suspend fun getMacros(@Query("query") meal: String) : AllMacros
 
 }
 
