@@ -34,6 +34,15 @@
     <string name="nutrition">Ernährung</string>
     <string name="calories">Kalorien</string>
     <string name="exercise">Übungen</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- exercise discription -->
+    <string name="testtext">Körperposition\nZunächst begibst du dich auf deine Knie. Die Hände stützt du schulterbreit auf den Boden.
+        In der Ausgangstellung befinden sich deine Hände unter deiner Brust. Strecke die Beine nach hinten aus.
+        Deine Hände und deine Zehenspitzen halten das Körpergewicht. Achte darauf, dass Beine, Oberkörper und Kopf eine gerade Linie bilden.
+        Du spannst deinen ganzen Körper an.\n\nBewegungsausführung\nNun senkst du den ganzen Körper nach unten ab.
+        Dabei ist es wichtig, dass du die Körperspannung hältst. Deine Brust und Arme übernehmen die vollständige Arbeit.
+        Beim Einatmen senkst du den Körper ab. Die Ellenbogen befinden sich neben deinem Körper und zeigen nicht vollständig nach außen.
+        Anschließend atmest du aus und drückst den Körper wieder nach oben.</string>
+    <string name="liegestuetze">1- begebe dich auf die Knie \n2- Stütze deine Hände Schulterbreit auf den Boden \n3-</string>
 </resources>

@@ -15,15 +15,15 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     val trainingCategories = listOf(
         TrainingCategory(
             "Brust",
-            R.drawable.krafttraining
+            R.drawable.brust
         ),
         TrainingCategory(
             "Schulter",
-            R.drawable.krafttraining
+            R.drawable.schulter
         ),
         TrainingCategory(
             "Rücken",
-            R.drawable.krafttraining
+            R.drawable.ruecken
         ),
         TrainingCategory(
             "Bauch",

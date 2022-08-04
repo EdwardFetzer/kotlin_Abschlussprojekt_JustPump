@@ -50,6 +50,7 @@ class TrainingItemAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.trainingTitle.text = item.name
+        holder.imageView.setImageResource(item.imageResource)
 
         holder.cvTraining.setOnClickListener {
             // wird an ExerciseFragment übergeben
