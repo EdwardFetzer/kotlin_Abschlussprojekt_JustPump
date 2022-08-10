@@ -9,7 +9,14 @@
         android:id="@+id/nutritionFragment"
         android:name="com.example.justpump.ui.nutrition.NutritionFragment"
         android:label="@string/nutrition"
-        tools:layout="@layout/fragment_nutrition" />
+        tools:layout="@layout/fragment_nutrition" >
+        <action
+            android:id="@+id/action_nutritionFragment_to_nutritionDetailFragment"
+            app:destination="@id/nutritionDetailFragment" />
+        <argument
+            android:name="nutritionCategoryARG"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/trainingFragment"
         android:name="com.example.justpump.ui.training.TrainingFragment"
@@ -29,6 +36,12 @@
         <action
             android:id="@+id/action_homeFragment_to_nutritionFragment"
             app:destination="@id/nutritionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_nutritionDetailFragment"
+            app:destination="@id/nutritionDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseFragment"
@@ -44,9 +57,22 @@
     <fragment
         android:id="@+id/exerciseDetailFragment"
         android:name="com.example.justpump.ui.exercises.ExerciseDetailFragment"
-        android:label="ExerciseDetailFragment" />
+        android:label="ExerciseDetailFragment" >
+        <argument
+            android:name="exerciseItem"
+            app:argType="com.example.justpump.data.model.Exercise" />
+    </fragment>
     <fragment
         android:id="@+id/caloriesFragment"
         android:name="com.example.justpump.ui.calories.CaloriesFragment"
         android:label="CaloriesFragment" />
+    <fragment
+        android:id="@+id/nutritionDetailFragment"
+        android:name="com.example.justpump.ui.nutrition.NutritionDetailFragment"
+        android:label="fragment_nutrition_detail"
+        tools:layout="@layout/fragment_nutrition_detail" >
+        <argument
+            android:name="nutritionItem"
+            app:argType="com.example.justpump.data.model.Nutrition" />
+    </fragment>
 </navigation>

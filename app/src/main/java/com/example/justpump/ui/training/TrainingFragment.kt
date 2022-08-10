@@ -18,7 +18,6 @@ import com.example.justpump.databinding.FragmentTrainingBinding
 class TrainingFragment : Fragment() {
 
     private val viewModel: ViewModel by activityViewModels()
-
     private lateinit var binding: FragmentTrainingBinding
 
     override fun onCreateView(
@@ -28,7 +27,6 @@ class TrainingFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_training, container, false)
 
-            // Inflate the layout for this fragment
         return binding.root
     }
 
@@ -37,12 +35,10 @@ class TrainingFragment : Fragment() {
 
         val recyclerView = binding.rvTraining
 
-        recyclerView.adapter = TrainingItemAdapter(viewModel.trainingCategories)
+        recyclerView.adapter = viewModel.trainings.value?.let { TrainingItemAdapter(it) }
 
-        // recyclerView erhält einen passenden LayoutManager
         recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
 
         recyclerView.setHasFixedSize(true)
-
     }
 }

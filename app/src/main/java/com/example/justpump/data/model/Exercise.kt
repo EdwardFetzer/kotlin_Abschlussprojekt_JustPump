@@ -1,8 +1,12 @@
 package com.example.justpump.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 /**
  * Diese Klasse repräsentiert eine Übung
  **/
+@Parcelize
 data class Exercise (
     val Id: Long,
     val stringResource: Int,
@@ -10,4 +14,4 @@ data class Exercise (
     val description: String,
     val category: String
     //val categories: List<ExerciseCategory>,
-)
+) : Parcelable

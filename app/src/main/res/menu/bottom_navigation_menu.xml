@@ -4,7 +4,7 @@
         android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="@string/home"/>
+        android:title="@string/home" />
     <item
         android:id="@+id/trainingFragment"
         android:enabled="true"

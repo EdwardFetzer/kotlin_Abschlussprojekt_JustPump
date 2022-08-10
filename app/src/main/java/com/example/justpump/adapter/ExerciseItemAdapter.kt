@@ -12,22 +12,15 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.justpump.R
 import com.example.justpump.data.model.Exercise
-import com.example.justpump.data.model.Training
 import com.example.justpump.data.model.TrainingCategory
 import com.example.justpump.ui.exercises.ExerciseFragmentDirections
 
 class ExerciseItemAdapter(
     private val context: Context,
-    private val dataset: List<Exercise>
+    private val dataset: List<Exercise>,
+    private val onclicklistener: (Exercise) -> Unit
 ) : RecyclerView.Adapter<ExerciseItemAdapter.ItemViewHolder>() {
 
-    //private lateinit var dataset: List<Exercise>
-
-   // @SuppressLint("Test3")
-    //fun submitExerciseList(list: List<Exercise>) {
-    //    dataset = list
-    //    notifyDataSetChanged()
-    //}
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.iv_exercise)
@@ -35,12 +28,16 @@ class ExerciseItemAdapter(
         val exerciseTitle: TextView = itemView.findViewById(R.id.tv_exercise_title)
     }
 
-    // hier werden neue ViewHolder erstellt
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseItemAdapter.ItemViewHolder {
+    /**
+     * neue ViewHolder werden erstellt
+     * itemLayout wird gebaut
+     * und in einem ViewHolder zurückgegeben
+     */
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val exerciseAdapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_exercise, parent, false)
 
-        return ExerciseItemAdapter.ItemViewHolder(exerciseAdapterLayout)
+        return ItemViewHolder(exerciseAdapterLayout)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
@@ -49,11 +46,8 @@ class ExerciseItemAdapter(
         holder.imageView.setImageResource(item.imageResource)
 
         holder.cvExercise.setOnClickListener {
-
-            holder.itemView.findNavController()
-                .navigate(ExerciseFragmentDirections.actionExerciseFragmentToExerciseDetailFragment())
+            onclicklistener(item)
         }
-
     }
 
 

@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:text="Übung"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/neon_green"
                     android:textSize="14sp" />
 
             </LinearLayout>

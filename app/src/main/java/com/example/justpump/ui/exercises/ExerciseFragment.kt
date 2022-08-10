@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.justpump.R
 import com.example.justpump.ViewModel
 import com.example.justpump.adapter.ExerciseItemAdapter
 import com.example.justpump.adapter.TrainingItemAdapter
+import com.example.justpump.data.model.Exercise
 import com.example.justpump.databinding.FragmentExerciseBinding
 
 
@@ -48,7 +50,11 @@ class ExerciseFragment : Fragment() {
             Observer { list ->
                 val exercises = list.filter { it.category == category }
 
-                binding.rvExercise.adapter = ExerciseItemAdapter(requireContext(), exercises)
+                binding.rvExercise.adapter = ExerciseItemAdapter(requireContext(), exercises) {partitem : Exercise ->
+                    findNavController().navigate(
+                        ExerciseFragmentDirections.actionExerciseFragmentToExerciseDetailFragment(partitem)
+                    )
+                }
 
                 binding.rvExercise.layoutManager = GridLayoutManager(requireContext(), 2)
 

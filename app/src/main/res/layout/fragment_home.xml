@@ -36,26 +36,66 @@
             app:srcCompat="@drawable/training_background" />
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_randomTraining"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:foregroundTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:listitem="@layout/list_item_training" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_randomNutrition"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:foregroundTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rv_randomTraining"
+            app:layout_constraintStart_toStartOf="@+id/rv_randomTraining"
+            app:layout_constraintTop_toBottomOf="@+id/rv_randomTraining"
+            tools:listitem="@layout/list_item_nutrition" />
+
         <TextView
-            android:id="@+id/tv_movies"
+            android:id="@+id/tv_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            android:text="Home"
+            android:text="Hallo"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewHome"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Edward,"
+            android:textColor="@color/neon_green"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_name1"
+            app:layout_constraintStart_toEndOf="@+id/tv_name1"
+            app:layout_constraintTop_toTopOf="@+id/tv_name1" />
 
-        </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="was trainierst du heute?"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/tv_name1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

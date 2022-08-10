@@ -13,36 +13,8 @@ import kotlinx.coroutines.launch
 
 class ViewModel(application: Application) : AndroidViewModel(application) {
 
-    val trainingCategories = listOf(
-        TrainingCategory(
-            "Brust",
-            R.drawable.brust
-        ),
-        TrainingCategory(
-            "Schulter",
-            R.drawable.schulter
-        ),
-        TrainingCategory(
-            "Rücken",
-            R.drawable.ruecken
-        ),
-        TrainingCategory(
-            "Bauch",
-            R.drawable.krafttraining
-        ),
-        TrainingCategory(
-            "Arme",
-            R.drawable.krafttraining
-        ),
-        TrainingCategory(
-            "Beine",
-            R.drawable.krafttraining
-        )
-    )
-
-
     //private val trainingDatasource = TrainingDatasource()
-    private val exerciseDatasource = ExerciseDatasource()
+    private val exerciseDatasource = ExerciseDatasource(getApplication<Application>().applicationContext)
     private val nutritionDatasource = NutritionDatasource()
     private val mealDatasource = MealDatasource()
 
@@ -63,8 +35,8 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    private val _trainings = MutableLiveData<List<Training>>(TrainingDatasource().loadTraining())
-    val trainings: LiveData<List<Training>>
+    private val _trainings = repository.trainings
+    val trainings: LiveData<List<TrainingCategory>>
         get() = _trainings
 
     private val _exercises = MutableLiveData<List<Exercise>>()

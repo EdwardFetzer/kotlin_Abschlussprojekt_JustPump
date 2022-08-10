@@ -3,19 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.19038008745375043" />
         <entry key="app/src/main/res/layout/activity_exercise_detail_fragment.xml" value="0.36875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_calories.xml" value="0.3296296296296296" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/fragment_exercise.xml" value="0.32708333333333334" />
-        <entry key="app/src/main/res/layout/fragment_exercise_detail.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_exercise_detail.xml" value="0.461118690313779" />
         <entry key="app/src/main/res/layout/fragment_exercises.xml" value="0.32708333333333334" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_nutrition.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/fragment_nutrition_detail.xml" value="0.31296296296296294" />
         <entry key="app/src/main/res/layout/fragment_training.xml" value="0.335" />
         <entry key="app/src/main/res/layout/list_item_exercise.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/list_item_home_training.xml" value="0.46331236897274636" />
         <entry key="app/src/main/res/layout/list_item_nutrition.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/list_item_training.xml" value="1.0" />
+        <entry key="app/src/main/res/layout/list_item_training.xml" value="0.38247528076171866" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.335" />
       </map>
     </option>

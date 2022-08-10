@@ -2,16 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginRight="16dp">
+    android:layout_margin="16dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_training"
         style="?attr/materialCardViewFilledStyle"
-        android:layout_width="166dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="#1C1B1F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +22,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- Media -->
             <ImageView
                 android:id="@+id/training_image"
                 android:layout_width="match_parent"
@@ -39,19 +36,16 @@
                 android:orientation="vertical"
                 android:padding="12dp">
 
-                <!-- Title, secondary and supporting text -->
                 <TextView
                     android:id="@+id/tv_training_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Training"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/neon_green"
                     android:textSize="14sp" />
 
             </LinearLayout>
-
-            <!-- Buttons -->
 
         </LinearLayout>
 

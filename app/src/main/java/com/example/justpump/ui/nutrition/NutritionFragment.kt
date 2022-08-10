@@ -13,13 +13,13 @@ import com.example.justpump.R
 import com.example.justpump.ViewModel
 import com.example.justpump.adapter.NutritionItemAdapter
 import com.example.justpump.data.NutritionDatasource
+import com.example.justpump.data.model.Nutrition
 import com.example.justpump.databinding.FragmentNutritionBinding
 
 
 class NutritionFragment : Fragment() {
 
     private val viewModel: ViewModel by activityViewModels()
-
     private lateinit var binding: FragmentNutritionBinding
 
     override fun onCreateView(
@@ -36,19 +36,27 @@ class NutritionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val nutritionAdapter = NutritionItemAdapter(requireContext())
+        val recyclerView = binding.rvNutrition
 
-        binding.rvNutrition.adapter = nutritionAdapter
+        val nutritions = NutritionDatasource().loadNutritions()
 
-        viewModel.nutrition.observe(
-            viewLifecycleOwner,
-            Observer {
-                nutritionAdapter.submitNutritionList(it)
-            }
-        )
+        recyclerView.adapter = NutritionItemAdapter(nutritions)
 
-        // recyclerView erhält einen passenden LayoutManager
-        binding.rvNutrition.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+
+        recyclerView.setHasFixedSize(true)
+
+//        binding.rvNutrition.adapter = nutritionAdapter
+//
+//        viewModel.nutrition.observe(
+//            viewLifecycleOwner,
+//            Observer {
+//                nutritionAdapter.submitNutritionList(it)
+//            }
+//        )
+//
+//        // recyclerView erhält einen passenden LayoutManager
+//        binding.rvNutrition.layoutManager = GridLayoutManager(requireContext(), 2)
 
     }
 }
