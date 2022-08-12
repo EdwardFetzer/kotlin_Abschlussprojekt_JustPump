@@ -10,11 +10,11 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.justpump.R
 import com.example.justpump.data.model.Nutrition
-import com.example.justpump.ui.nutrition.NutritionFragmentDirections
+import com.example.justpump.ui.home.HomeFragmentDirections
 
-class NutritionItemAdapter(
+class HomeItemAdapter2 (
     private val dataset: List<Nutrition>
-) : RecyclerView.Adapter<NutritionItemAdapter.ItemViewHolder>() {
+        ) : RecyclerView.Adapter<HomeItemAdapter2.ItemViewHolder>() {
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cvNutrition: CardView = itemView.findViewById(R.id.cv_nutrition)
@@ -29,10 +29,10 @@ class NutritionItemAdapter(
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
-        val nutritionAdapterLayout = LayoutInflater.from(parent.context)
+        val homeAdapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_nutrition, parent, false)
 
-        return ItemViewHolder(nutritionAdapterLayout)
+        return ItemViewHolder(homeAdapterLayout)
     }
 
     /**
@@ -44,9 +44,9 @@ class NutritionItemAdapter(
         holder.nutritionTitle.text = item.name
         holder.ivNutrition.setImageResource(item.imageResource)
 
-       holder.cvNutrition.setOnClickListener {
+        holder.cvNutrition.setOnClickListener {
             holder.itemView.findNavController()
-                .navigate(NutritionFragmentDirections.actionNutritionFragmentToNutritionDetailFragment(item))
+                .navigate(HomeFragmentDirections.actionHomeFragmentToNutritionDetailFragment(item))
         }
     }
 

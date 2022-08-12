@@ -38,7 +38,7 @@ class NutritionDetailFragment : Fragment() {
         val nutrition = args.nutritionItem
 
         binding.ivNutritionDetail.setImageResource(nutrition.imageResource)
-        binding.tvNutritionDetailTitle.text = requireContext().getString(nutrition.stringResource)
+        binding.tvNutritionDetailTitle.text = nutrition.name
         binding.tvNutritionDetailDescriptionText.text = nutrition.description
     }
 }

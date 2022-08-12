@@ -21,7 +21,6 @@ class ExerciseItemAdapter(
     private val onclicklistener: (Exercise) -> Unit
 ) : RecyclerView.Adapter<ExerciseItemAdapter.ItemViewHolder>() {
 
-
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.iv_exercise)
         val cvExercise: CardView = itemView.findViewById(R.id.cv_exercise)
@@ -40,6 +39,10 @@ class ExerciseItemAdapter(
         return ItemViewHolder(exerciseAdapterLayout)
     }
 
+    /**
+     * hier findet der Recyclingprozess statt
+     * die vom ViewHolder bereitgestellten Parameter werden verändert
+     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.exerciseTitle.text = context.resources.getString(item.stringResource)
@@ -49,7 +52,6 @@ class ExerciseItemAdapter(
             onclicklistener(item)
         }
     }
-
 
     override fun getItemCount(): Int {
         return dataset.size

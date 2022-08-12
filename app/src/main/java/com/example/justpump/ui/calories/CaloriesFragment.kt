@@ -42,7 +42,24 @@ class CaloriesFragment : Fragment() {
         binding.button.setOnClickListener {
             val foodName = binding.textInputEditText.text.toString()
             viewModel.getMacrosAndInsert(foodName)
+            viewModel.getMacros(foodName)
         }
+
+        viewModel.macros.observe(
+            viewLifecycleOwner, Observer {
+                binding.tvName.text = it.name
+                binding.tvServingSize.text = it.serving_size_g.toString()
+                binding.tvCalories.text = it.calories.toString()
+                binding.tvFatTotal.text = it.fat_total_g.toString()
+                binding.tvFatSaturated.text = it.fat_saturated_g.toString()
+                binding.tvCholeterol.text = it.cholesterol_mg.toString()
+                binding.tvSodium.text = it.sodium_mg.toString()
+                binding.tvPotassium.text = it.potassium_mg.toString()
+                binding.tvCarbohydrates.text = it.carbohydrates_total_g.toString()
+                binding.tvSugar.text = it.sugar_g.toString()
+                binding.tvProtein.text = it.protein_g.toString()
+            }
+        )
 
 //        viewModel.dailyList.observe(
 //            viewLifecycleOwner, Observer {

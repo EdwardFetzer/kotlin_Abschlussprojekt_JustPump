@@ -37,7 +37,7 @@ class TrainingFragment : Fragment() {
 
         recyclerView.adapter = viewModel.trainings.value?.let { TrainingItemAdapter(it) }
 
-        recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         recyclerView.setHasFixedSize(true)
     }

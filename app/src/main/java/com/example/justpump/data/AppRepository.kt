@@ -24,9 +24,9 @@ class AppRepository (
             TrainingCategory( "Brust", R.drawable.brust),
             TrainingCategory( "Schulter", R.drawable.schulter),
             TrainingCategory( "Rücken", R.drawable.ruecken),
-            TrainingCategory( "Bauch", R.drawable.krafttraining),
-            TrainingCategory( "Arme", R.drawable.krafttraining),
-            TrainingCategory( "Beine", R.drawable.krafttraining),
+            TrainingCategory( "Bauch", R.drawable.bauch),
+            TrainingCategory( "Arme", R.drawable.arme),
+            TrainingCategory( "Beine", R.drawable.beinpresse),
         )
     }
 
@@ -39,6 +39,16 @@ class AppRepository (
             database.dailyMacroDatabaseDao.insert(macros[0])
         } catch (e: Exception) {
             Log.e("AppRepository", " Error loading data from API: $e")
+        }
+    }
+
+    suspend fun getMacros(foodName: String) : List<Macros> {
+        try {
+            return api.retrofitService.getMacros(foodName).items
+
+        } catch (e: Exception) {
+            Log.e("AppRepository", " Error loading Macro data from API: $e")
+            return listOf()
         }
     }
 

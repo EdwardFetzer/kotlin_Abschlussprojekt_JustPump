@@ -21,7 +21,6 @@ class TrainingItemAdapter(
     private val dataset: List<TrainingCategory>
 ) : RecyclerView.Adapter<TrainingItemAdapter.ItemViewHolder>() {
 
-
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cvTraining: CardView = itemView.findViewById(R.id.cv_training)
         val imageView: ImageView = itemView.findViewById(R.id.training_image)
@@ -51,8 +50,6 @@ class TrainingItemAdapter(
         holder.imageView.setImageResource(item.imageResource)
 
         holder.cvTraining.setOnClickListener {
-            // wird an ExerciseFragment übergeben
-            //val bundle = bundleOf("exerciseFilter" to item.category)
             holder.itemView.findNavController()
                 .navigate(TrainingFragmentDirections.actionTrainingFragmentToExerciseFragment(item.name))
         }

@@ -17,7 +17,6 @@ import com.example.justpump.databinding.FragmentExerciseDetailBinding
 class ExerciseDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentExerciseDetailBinding
-    private val viewModel: ViewModel by activityViewModels()
 
     val args: ExerciseDetailFragmentArgs by navArgs()
 
@@ -45,6 +44,5 @@ class ExerciseDetailFragment : Fragment() {
         binding.ivExerciseDetail.setImageResource(exercise.imageResource)
         binding.tvExerciseDetailTitle.text = requireContext().getString(exercise.stringResource)
         binding.tvExerciseDetailDescriptionText.text = exercise.description
-        Log.e("exerciseTest", exercise.description)
     }
 }

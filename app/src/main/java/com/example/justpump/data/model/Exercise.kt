@@ -13,5 +13,4 @@ data class Exercise (
     val imageResource: Int,
     val description: String,
     val category: String
-    //val categories: List<ExerciseCategory>,
 ) : Parcelable

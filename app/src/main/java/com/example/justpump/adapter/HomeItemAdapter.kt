@@ -22,6 +22,11 @@ class HomeItemAdapter (
         val trainingTitle: TextView = itemView.findViewById(R.id.tv_training_title)
     }
 
+    /**
+     * neue ViewHolder werden erstellt
+     * itemLayout wird gebaut
+     * und in einem ViewHolder zurückgegeben
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         val homeAdapterLayout = LayoutInflater.from(parent.context)
@@ -30,6 +35,10 @@ class HomeItemAdapter (
         return ItemViewHolder(homeAdapterLayout)
     }
 
+    /**
+     * hier findet der Recyclingprozess statt
+     * die vom ViewHolder bereitgestellten Parameter werden verändert
+     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.trainingTitle.text = item.name

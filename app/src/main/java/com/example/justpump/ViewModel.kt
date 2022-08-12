@@ -13,13 +13,14 @@ import kotlinx.coroutines.launch
 
 class ViewModel(application: Application) : AndroidViewModel(application) {
 
-    //private val trainingDatasource = TrainingDatasource()
     private val exerciseDatasource = ExerciseDatasource(getApplication<Application>().applicationContext)
-    private val nutritionDatasource = NutritionDatasource()
+    private val nutritionDatasource = NutritionDatasource(getApplication<Application>().applicationContext)
     private val mealDatasource = MealDatasource()
 
     private val database = getDatabase(application)
     val repository = AppRepository(NutritionApi, database)
+
+    var macros = MutableLiveData<Macros>(Macros(0,0f,0f,0f,0f,"",0f,0f,0f,0f,0f,0f,0f))
 
     val dailyList = repository.dailyList
 
@@ -29,9 +30,18 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    /**
+     * ruft die funktion aus der AppRepository auf und führt die im hintergrund aus
+     */
     fun getMacrosAndInsert(foodName: String) {
         viewModelScope.launch {
             repository.getMacrosAndInsert(foodName)
+        }
+    }
+
+    fun getMacros(foodName: String) {
+        viewModelScope.launch {
+            macros.value = repository.getMacros(foodName)[0]
         }
     }
 

@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.justpump.R
 import com.example.justpump.databinding.FragmentHomeBinding
 import com.example.justpump.ViewModel
 import com.example.justpump.adapter.HomeItemAdapter
-import com.example.justpump.adapter.TrainingItemAdapter
+import com.example.justpump.adapter.HomeItemAdapter2
 
 
 class HomeFragment : Fragment() {
@@ -34,12 +33,20 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = binding.rvRandomTraining
+        val rvHomeTraining = binding.rvRandomTraining
 
-        recyclerView.adapter = viewModel.trainings.value?.let { HomeItemAdapter(it) }
+        rvHomeTraining.adapter = viewModel.trainings.value?.let { HomeItemAdapter(it) }
 
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        rvHomeTraining.layoutManager = LinearLayoutManager(requireContext())
 
-        recyclerView.setHasFixedSize(true)
+        rvHomeTraining.setHasFixedSize(true)
+
+        val rvHomeNutrition = binding.rvRandomNutrition
+
+        rvHomeNutrition.adapter = viewModel.nutrition.value?.let { HomeItemAdapter2(it) }
+
+        rvHomeNutrition.layoutManager = LinearLayoutManager(requireContext())
+
+        rvHomeNutrition.setHasFixedSize(true)
     }
 }

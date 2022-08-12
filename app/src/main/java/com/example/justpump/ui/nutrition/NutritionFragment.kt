@@ -29,7 +29,6 @@ class NutritionFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_nutrition, container, false)
 
-        // Inflate the layout for this fragment
         return binding.root
     }
 
@@ -38,25 +37,12 @@ class NutritionFragment : Fragment() {
 
         val recyclerView = binding.rvNutrition
 
-        val nutritions = NutritionDatasource().loadNutritions()
+        val nutritions = NutritionDatasource(requireContext()).loadNutritions()
 
         recyclerView.adapter = NutritionItemAdapter(nutritions)
 
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         recyclerView.setHasFixedSize(true)
-
-//        binding.rvNutrition.adapter = nutritionAdapter
-//
-//        viewModel.nutrition.observe(
-//            viewLifecycleOwner,
-//            Observer {
-//                nutritionAdapter.submitNutritionList(it)
-//            }
-//        )
-//
-//        // recyclerView erhält einen passenden LayoutManager
-//        binding.rvNutrition.layoutManager = GridLayoutManager(requireContext(), 2)
-
     }
 }
